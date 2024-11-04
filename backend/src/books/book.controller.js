@@ -14,7 +14,7 @@ const postABook = async (req, res) => {
 // get all books
 const getAllBooks =  async (req, res) => {
     try {
-        const books = await Book.find().sort({ createdAt: -1});
+        const books = await Book.find();
         res.status(200).send(books)
         
     } catch (error) {

@@ -7,19 +7,13 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { useRecoilState } from 'recoil';
+import { getAllBooks } from '../../Recoil/books/bookApi';
 
 function Recomended() {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [books, setBooks] = useState([]);
-   
-  
-    useEffect(() => {
-      fetch("book.json")
-        .then((res) => res.json())
-        .then((data) => setBooks(data))
-        .catch((error) => console.error("Error fetching books data:", error));
-    }, []);
-  
+    const [books, setBooks] = useRecoilState(getAllBooks);
+     
   return (
    <div>
       <h2 className='text-2xl font-semibold m-6'>Recommended for  you</h2>

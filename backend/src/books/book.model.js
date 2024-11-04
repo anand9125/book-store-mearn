@@ -1,5 +1,9 @@
-const mongoose =  require('mongoose');
 
+const mongoose = require('mongoose');
+
+mongoose.connect("mongodb+srv://akdon9936:nMxORrZotFbUjbwZ@cluster0.xm9z9.mongodb.net/book-store").then(() => {
+    console.log("MongoDB connected successfully");
+  })
 const bookSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -37,6 +41,6 @@ const bookSchema = new mongoose.Schema({
     timestamps: true,
   });
 
-  const Book = mongoose.model('Book', bookSchema);
+  const Book = mongoose.model('Book', bookSchema); //document represents a single record in a MongoDB collection. 
 
   module.exports = Book;
