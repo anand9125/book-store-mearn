@@ -14,14 +14,17 @@ import "sweetalert2/dist/sweetalert2.js"
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Singlebook from './pages/Singlebook'
+import { AuthProvider } from './context/AuthContext'
 
 function App() {
 
 
   return (
        <div>
+       
         <RecoilRoot>
          <BrowserRouter>
+         <AuthProvider>
          <Navbar></Navbar>
            <Routes>
               <Route path="/" element={<Home></Home>}>Home</Route>
@@ -31,9 +34,11 @@ function App() {
               <Route path="/checkout" element={<Checkout></Checkout>}>Cart</Route> 
               <Route path="/books/:id" element={<Singlebook></Singlebook>}>SingleBook</Route>   
           </Routes>
-          <Footer></Footer>  
+          <Footer></Footer> 
+          </AuthProvider> 
         </BrowserRouter>
         </RecoilRoot>
+
         </div>
       )
     }

@@ -8,17 +8,21 @@ import { FiShoppingCart } from "react-icons/fi";
 import avatarImg from "../assets/avatar.png";
 import { useRecoilState } from 'recoil';
 import { cartState } from '../Recoil/Cart/atom';
+import { useAuth } from '../context/AuthContext';
 const navigation = [
   { name: "Dashboard", href: "/dashboard" },
   { name: "Orders", href: "/orders" },
-  { name: "Cart", href: "/cart" },
-  { name: "Logout", href: "/logout" },
+  { name: "Cart", href: "/cart" }
 ];
 
 const Navbar = () => {
-const currentUser = true;
+  const {currentUser,logOut} =useAuth()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [cartItems, setCartItems] = useRecoilState(cartState);
+   
+  const handleLogOut =()=>{
+    logOut()
+  }
 
   return (
     <div>
@@ -56,9 +60,12 @@ const currentUser = true;
                       <ul>
                         {navigation.map((item) => (
                           <li key={item.name} onClick={() => setIsDropdownOpen(false)}>
-                            <Link to={item.href}>{item.name}</Link>
+                            <Link to={item.href} className='block px-4 py-2 text-sm hover:bg-gray-100'>{item.name}</Link>
                           </li>
                         ))}
+                        <li>
+                          <button className='block px-4 py-2 text-sm hover:bg-gray-100' onClick={handleLogOut}>Logout</button>
+                        </li>
                        </ul>
                     </div>
                   )}
