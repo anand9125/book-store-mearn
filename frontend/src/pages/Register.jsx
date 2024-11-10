@@ -33,7 +33,7 @@ function Register() {
      navigate("/")
     }
     catch(e){
-     alert("Already register")
+     alert("Google register failed")
     }
    }
     return (

@@ -15,9 +15,10 @@ app.use(cors({
 
 // routes
 const bookRoutes=require("./src/books/book.route")
-
+const orderRoutes=require("./src/orders/order.route")
 
 app.use("/api/books", bookRoutes)
+app.use("/api/order", orderRoutes)
 
 
 

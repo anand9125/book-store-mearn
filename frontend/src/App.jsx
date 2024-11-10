@@ -15,6 +15,7 @@ import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Singlebook from './pages/Singlebook'
 import { AuthProvider } from './context/AuthContext'
+import Privatetroutes from './componets/Privatetroutes'
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
               <Route path="/login" element={<Login></Login>}>Login</Route> 
               <Route path="/register" element={<Register></Register>}>Register</Route> 
               <Route path="/cart" element={<Cart></Cart>}>Cart</Route> 
-              <Route path="/checkout" element={<Checkout></Checkout>}>Cart</Route> 
+              <Route path="/checkout" element={<Privatetroutes><Checkout></Checkout></Privatetroutes>}>Cart</Route> 
               <Route path="/books/:id" element={<Singlebook></Singlebook>}>SingleBook</Route>   
           </Routes>
           <Footer></Footer> 
