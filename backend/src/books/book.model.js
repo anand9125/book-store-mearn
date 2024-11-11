@@ -44,3 +44,5 @@ const bookSchema = new mongoose.Schema({
   const Book = mongoose.model('Book', bookSchema); //document represents a single record in a MongoDB collection. 
 
   module.exports = Book;
+
+  //Models provide built-in methods for CRUD operations, which makes it easier to interact with the database

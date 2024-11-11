@@ -16,9 +16,11 @@ app.use(cors({
 // routes
 const bookRoutes=require("./src/books/book.route")
 const orderRoutes=require("./src/orders/order.route")
+const adminRoutes=require("./src/users/user.routes")
 
 app.use("/api/books", bookRoutes)
 app.use("/api/order", orderRoutes)
+app.use("/api/auth", adminRoutes)
 
 
 

@@ -7,12 +7,14 @@ import { useForm } from "react-hook-form"
 import { placeOrder } from '../Recoil/orders/orderApi';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { useState } from 'react';
 function Checkout() {
     const{currentUser} =useAuth()
     const [cartItems, setCartItems] = useRecoilState(cartState);
     const Subtotal = cartItems.reduce((accumulator, currentValue) => accumulator + currentValue.newPrice, 0);
     const [orderResponse, setOrderResponse] = useRecoilState(placeOrder);
-   const navigate = useNavigate();
+    const navigate = useNavigate();
+
     const {
       register,
       handleSubmit,
@@ -48,14 +50,15 @@ function Checkout() {
         showConfirmButton: false,
         timer: 1500
       });
-      navigate("/order")
+      navigate(`/order/${currentUser.email}`)
       console.log(orderResponse)// Update Recoil state with response
     } catch (error) {
       console.error("Error while placing order", error);
       alert("Failed to place order");
     }
-  
    }
+ 
+ 
    return (
     <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
       <div className="container max-w-screen-lg mx-auto">
@@ -92,6 +95,7 @@ function Checkout() {
                     id="email"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                     disabled
+                   
                     defaultValue={currentUser?.email}
                   />
                 </div>
@@ -175,6 +179,7 @@ function Checkout() {
                 {/* Submit Button */}
                 <div className="md:col-span-5 text-right">
                   <button
+                  
                     type="submit"
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                   >

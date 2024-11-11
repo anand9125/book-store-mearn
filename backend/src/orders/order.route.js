@@ -16,7 +16,7 @@ router.post("/",async(req,res)=>{
 router.get("/email/:email",async(req,res)=>{
   try{
     const {email}=req.params;
-    const orders = await Order.find({email}).sort({createdAt:-1})
+    const orders = await Order.find({email})
     if(!orders){
     res.status(200).json({message:"Order not found"})
     }
