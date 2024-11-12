@@ -1,8 +1,8 @@
 import React from 'react'
-import Banner from '../componets/Home.Compo/Banner'
-import Topseller from '../componets/Home.Compo/Topseller'
-import Recomended from '../componets/Home.Compo/Recommened'
-import News from '../componets/Home.Compo/News'
+import Banner from './Banner'
+import Topseller from './Topseller'
+import Recomended from './Recommened'
+import News from './News'
 
 function Home() {
   return (

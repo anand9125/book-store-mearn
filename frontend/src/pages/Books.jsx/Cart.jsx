@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil';
-import { cartState } from '../Recoil/Cart/atom';
-import { getCartImgUrl } from '../utils/getCartImgUrl';
+import { cartState } from '../../Recoil/Cart/atom';
+import { getCartImgUrl } from '../../utils/getCartImgUrl';
 import Swal from 'sweetalert2';
 function Cart() {
     const [cartItems, setCartItems] = useRecoilState(cartState);

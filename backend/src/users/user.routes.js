@@ -9,10 +9,10 @@ router.post("/admin",async(req,res)=>{
     {
       const admin = await User.findOne({username})
       if(!admin){
-        res.status(404).send({message:"Admin is not found"})
+       return res.status(404).send({message:"Admin is not found"})
       }
       if(password!==admin.password){
-        res.status(401).send({message:"Invalid password"})
+      return  res.status(401).send({message:"Invalid password"})
       }
       const token = jwt.sign({id:admin._id,username:admin.username,role:admin.role},"secret") //authentication and authorization systems, 
       return res.status(200).json({

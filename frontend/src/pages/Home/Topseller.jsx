@@ -1,5 +1,5 @@
 import React, { useEffect, useState, startTransition } from 'react';
-import BooksCard from './BookCard';
+import BooksCard from '../Books.jsx/BookCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';

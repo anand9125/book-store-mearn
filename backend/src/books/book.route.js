@@ -17,7 +17,7 @@ router.get("/:id", getSingleBook);
 // update a book endpoint
 router.put("/edit/:id",verifyAdmin,  UpdateBook);
 
-router.delete("/:id",verifyAdmin, deleteABook)
+router.delete("/:id", deleteABook)
 
 
 module.exports = router;

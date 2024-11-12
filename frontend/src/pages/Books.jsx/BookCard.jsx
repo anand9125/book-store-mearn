@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import { FiShoppingCart } from "react-icons/fi";
 import { getImgUrl } from '../../utils/getImageUrl';
 import { Link } from 'react-router-dom';
-import useCartAction from './useCartAction';
+import useCartAction from "../../componets/useCartAction"
 
 const BooksCard = ({ book }) => {
   const {addToCart}=useCartAction();

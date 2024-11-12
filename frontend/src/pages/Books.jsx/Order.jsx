@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { getOrderByemail } from '../Recoil/orders/orderApi';
+import { getOrderByemail } from '../../Recoil/orders/orderApi';
 import { useRecoilValue } from 'recoil';
 
 function Order() {

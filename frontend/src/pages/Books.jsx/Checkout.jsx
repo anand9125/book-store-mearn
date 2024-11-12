@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { cartState } from '../Recoil/Cart/atom';
+import { cartState } from '../../Recoil/Cart/atom';
 import { useRecoilState } from 'recoil';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../../context/AuthContext';
 import { useForm } from "react-hook-form"
-import { placeOrder } from '../Recoil/orders/orderApi';
+import { placeOrder } from '../../Recoil/orders/orderApi';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useState } from 'react';

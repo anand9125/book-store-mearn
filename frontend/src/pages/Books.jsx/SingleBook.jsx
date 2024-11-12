@@ -1,10 +1,10 @@
 import React from 'react'
 import { FiShoppingCart } from "react-icons/fi"
 import { useParams } from "react-router-dom"
-import { getImgUrl } from '../utils/getImageUrl'
-import { getSingleBookbyID } from '../Recoil/books/bookApi'
+import { getImgUrl } from '../../utils/getImageUrl'
+import { getSingleBookbyID } from '../../Recoil/books/bookApi'
 import { useRecoilValue } from 'recoil'
-import useCartAction from '../componets/Home.Compo/useCartAction'
+import useCartAction from '../../componets/useCartAction'
 
 const SingleBook = () => {
     const {id} = useParams();

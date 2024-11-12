@@ -6,7 +6,7 @@ import axios from "axios"
 
 export const getAllBooks=selector({
         key:"getAllBookselector",
-        get:async()=>{
+        get:async({get})=>{
           
           try {
              const response=await axios.get("http://localhost:3000/api/books/")
@@ -69,21 +69,21 @@ export const postBookByid = selector({
         }
     })
 
-export const deleteBookByid = selector({
-        key:"deleteBookByidSelector",
-        get:async()=>{
+// export const deleteBookByid = selectorFamily({
+//         key:"deleteBookByidSelectorFamily",
+//         get:(id)=>async()=>{
          
-          try {
-             const response=await axios.delete(`http://localhost:3000/api/books/${id}`)
-            return response.data
-           }
-            catch(err){
-                console.error("Error while deleting book",err)
-                return {err:"Failed to delete book"}
-            }
+//           try {
+//              const response=await axios.delete(`http://localhost:3000/api/books/${id}`)
+//             return response.data
+//            }
+//             catch(err){
+//                 console.error("Error while deleting book",err)
+//                 return {err:"Failed to delete book"}
+//             }
           
-        }
-    })
+//         }
+//     })
 
 
 

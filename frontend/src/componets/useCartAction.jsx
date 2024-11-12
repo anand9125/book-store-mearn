@@ -1,6 +1,6 @@
 import React from 'react'
 import Swal from "sweetalert2"
-import { cartState } from '../../Recoil/Cart/atom';
+import { cartState } from '../Recoil/Cart/atom';
 import { useRecoilState } from 'recoil';
 
 function useCartAction() {
