@@ -8,7 +8,6 @@ const verifyAdmin = async(req,res,next)=>{
         const decode = jwt.verify(authHeader,"secret",(err,user)=>{
             if(err){
                 return res.status(403).json({message:"Invalid credential"})
-
             }
             req.user=user
             next()

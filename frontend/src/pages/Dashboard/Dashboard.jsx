@@ -15,7 +15,7 @@ function Dashboard() {
         const response=await axios.get("http://localhost:3000/api/admin",{
           headers:{ //headers object specifies additional information to be sent with the request.
             "Authorization":localStorage.getItem("token"),
-            "Content-Type":"application/json"
+            "Content-Type":"application/json"  // tells the server that the data format being sent with the request (if any) will be in JSON.
           }
         })
         setData(response.data)
@@ -190,9 +190,7 @@ function Dashboard() {
       </div>
     </div>
   </section>
-  <section className="text-right font-semibold text-gray-500">
-    <a href="#" className="text-purple-600 hover:underline">Recreated on Codepen</a> with <a href="https://tailwindcss.com/" className="text-teal-400 hover:underline">Tailwind CSS</a> by Azri Kahar, <a href="https://dribbble.com/shots/10711741-Free-UI-Kit-for-Figma-Online-Courses-Dashboard" className="text-purple-600 hover:underline">original design</a> made by Chili Labs
-  </section>
+  
 
              </div>
   )}

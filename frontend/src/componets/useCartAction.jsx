@@ -8,9 +8,11 @@ function useCartAction() {
     
   
     const addToCart= (item)=> {
+      
         //cartItem hold the item currently in cart
       //This argument represents the book item that is being added to the cart.
       const existingItem=cartItems.find((cartItem)=>cartItem._id===item._id)
+      
       if (!existingItem) {
         // Add item to the cart
         const updatedCart = [...cartItems, item];

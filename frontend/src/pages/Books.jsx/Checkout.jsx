@@ -14,7 +14,7 @@ function Checkout() {
     const Subtotal = cartItems.reduce((accumulator, currentValue) => accumulator + currentValue.newPrice, 0);
     const [orderResponse, setOrderResponse] = useRecoilState(placeOrder);
     const navigate = useNavigate();
-
+  console.log(cartItems)
     const {
       register,
       handleSubmit,
@@ -23,7 +23,7 @@ function Checkout() {
   } = useForm()
 
   const onSubmit = async (data) => {  // react hook form 
-     
+     console.log(data)
     const newOrder = {
         name: data.name,
         email: currentUser?.email,
@@ -41,7 +41,7 @@ function Checkout() {
     console.log(newOrder);
     
     try {
-      const response = await axios.post('http://localhost:3000/api/order/', newOrder);
+      const response = await axios.post('http://localhost:3000/api/order', newOrder);
       setOrderResponse(response.data);
       Swal.fire({
         position: "middle",

@@ -55,9 +55,7 @@ function Topseller() {
         
         {/* Swiper for displaying books */}
         <div className='pt-6'>
-          {isLoading ? (
-            <p>Loading...</p> // Show loading indicator while data is being fetched
-          ) : (
+           
             <Swiper
               loop={true}
               slidesPerView={1}
@@ -83,7 +81,7 @@ function Topseller() {
                 <p>No books found</p>
               )}
             </Swiper>
-          )}
+          
         </div>
       </div>
     </div>

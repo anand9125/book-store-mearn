@@ -8,10 +8,7 @@ const port = 3000;
 
 // middleware
 app.use(express.json());
-app.use(cors({
-    
-    credentials: true
-}))
+app.use(cors())
 
 // routes
 const bookRoutes=require("./src/books/book.route")

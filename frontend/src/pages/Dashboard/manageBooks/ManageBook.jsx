@@ -8,31 +8,18 @@ function ManageBook() {
   const navigate = useNavigate();
 
   const books =  useRecoilValue(getAllBooks);
-
   console.log(books)
-  // Handle deleting a book
-  // const handleDeleteBook = async (id) => {
-  //     try {
-  //  //   const deleteBook =  useRecoilState(deleteBookByid(id))   The useRecoilState hook cannot be used directly inside an asynchronous function like handleDeleteBook 
-  //  //use useRecoilCallback to create an asynchronous callback that interacts with Recoil state
-  //hooks generally cannot be used conditionally or inside any function that isn’t a React component or a custom hook
-  //     if(deleteBook){
-  //       alert("Book deleted succesfully")
-  //     }  
-  //     } catch (error) {
-  //         console.error('Failed to delete book:', error.message);
-  //         alert('Failed to delete book. Please try again.');
-  //     }
-  // };
- // useRecoilCallback is a hook in Recoil that lets you create a callback function that can interact with Recoil state (atoms or selectors).
- // It's especially useful when you need an asynchronous callback that reads or modifies Recoil state outside the usual useRecoilState or useRecoilValue hooks.
-
-  const handleDeleteBook = useRecoilCallback(({snapshot }) => async (id) => {
+ const handleDeleteBook = async (id) => {
+    console.log(id)
     try {
-      const response = await axios.delete(`http://localhost:3000/api/books/${id}`);
+      const response = await axios.delete(`http://localhost:3000/api/books/${id}`,{
+       headers:{
+        "Authorization":localStorage.getItem("token"),
+        "Content-Type": "application/json"
+       }
+      });
       if (response.status === 200) {
         alert("Book deleted successfully");
-        
       } else {
         alert("Failed to delete book.");
       }
@@ -40,12 +27,9 @@ function ManageBook() {
       console.error('Failed to delete book:', error.message);
       alert('Failed to delete book. Please try again.');
     }
-  });
-
-  // Handle navigating to Edit Book page
-  const handleEditClick = (id) => {
-      navigate(`dashboard/edit-book/${id}`);
   };
+  
+
   return (
     <section className="py-1 bg-blueGray-50">
     <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
