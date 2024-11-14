@@ -35,8 +35,7 @@ const UpdateBook = () => {
       newPrice: Number(data.newPrice),
       coverImage: data.coverImage || bookData.coverImage,
     };
-    console.log(data)
-    console.log(updateBookData)
+    
     try {
       await axios.put(`http://localhost:3000/api/books/edit/${id}`, updateBookData, {
         headers: {
