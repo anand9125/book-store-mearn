@@ -20,7 +20,7 @@ import AdminRoutes from './AdminRoutes'
 import AdminLogin from '../componets/AdminLogin'
 import AddBook from '../pages/Dashboard/addBook/AddBook'
 import UpdateBook from '../pages/Dashboard/EditBook/UpdateBook'
-import ManageBook from '../pages/Dashboard/manageBooks/manageBook'
+import ManageBook from '../pages/Dashboard/manageBooks/ManageBook'
 import DashboardLayout from '../pages/Dashboard/DashboardLayout'
 import Dashboard from '../pages/Dashboard/Dashboard'
 function Router() {
