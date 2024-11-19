@@ -5,7 +5,7 @@
 // accessible by any component in the app.
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase/firebaseCOnfig.js";
+import {auth} from "../firebase/firebaseConfig"
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { getAuth, signInWithPopup, GoogleAuthProvider,signOut,onAuthStateChanged } from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
