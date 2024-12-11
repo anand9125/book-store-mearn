@@ -1,10 +1,10 @@
 {
   "name": "book-store-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
-    "start:dev": "nodemon index.js"
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "mamun",

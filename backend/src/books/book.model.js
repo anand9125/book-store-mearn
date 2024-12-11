@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-mongoose.connect("mongodb+srv://akdon9936:nMxORrZotFbUjbwZ@cluster0.xm9z9.mongodb.net/book-store").then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
     console.log("MongoDB connected successfully");
   })
 const bookSchema = new mongoose.Schema({
